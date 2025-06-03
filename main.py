@@ -4,7 +4,7 @@ import requests
 # API 키 설정
 API_KEY = "2f7ff809309654c9d9105c45df3f2a65"
 
-st.title("🏞 날씨 기반 옷차림 · 운동 · 건강 추천기")
+st.title("🏞 오늘 날씨 어때? 뭐 입지?")
 address = st.text_input("한국 주소를 입력하세요 (예: 삼청동, 마곡동, 강남구):")
 
 # 추천 정보를 반환하는 함수
