@@ -4,7 +4,7 @@ import requests
 API_KEY = "2f7ff809309654c9d9105c45df3f2a65"
 
 st.title("🏞 날씨 기반 옷차림 · 운동 · 건강 추천기")
-address = st.text_input("한국 주소를 입력하세요 (예: 서울특별시 강남구):")
+address = st.text_input("한국 주소를 입력하세요 (예: 삼청동, 마곡동, 강남구):")
 
 def get_recommendations(temp: float, weather: str):
     ranges = list(range(4, 29, 3))
