@@ -114,6 +114,7 @@ def get_weather(lat, lon):
     return temp, weather
 
 # 실행
+# 실행
 if address:
     lat, lon = get_coordinates(address)
     if lat is None:
@@ -134,3 +135,10 @@ if address:
 
         st.markdown("### 💡 건강 조언")
         st.markdown(recommendation["건강"])
+
+        # ✅ 마지막에 이미지 출력
+        st.image(
+            "https://wimg.kyeongin.com/news/legacy/file/201810/20181010000733388_1.jpg",
+            caption="기온에 따라 달라지는 계절별 옷차림 예시",
+            use_column_width=True
+        )
