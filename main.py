@@ -10,7 +10,6 @@ address = st.text_input("한국 주소를 입력하세요 (예: 삼청동, 마�
 # 추천 정보를 반환하는 함수
 def get_recommendations(temp: float, weather: str):
     key = "비" if "rain" in weather.lower() else "맑음"
-
     data = {
         (0, 7): {
             "옷차림": {
@@ -53,6 +52,7 @@ def get_recommendations(temp: float, weather: str):
             "건강": {"맑음": "열사병 주의, 냉방 대비 가디건 챙기기", "비": "온도 급변 주의, 장시간 외출 자제"}
         }
     }
+
 
     for (low, high), info in data.items():
         if low <= temp < high:
