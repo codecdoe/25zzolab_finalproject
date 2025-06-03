@@ -8,6 +8,8 @@ API_KEY = "2f7ff809309654c9d9105c45df3f2a65"
 st.title("🏞 날씨 기반 옷차림 · 운동 · 건강 추천기")
 address = st.text_input("한국 주소를 입력하세요 (예: 서울특별시 강남구):")
 
+# 시각 이미지 삽입
+st.image("https://wimg.kyeongin.com/news/legacy/file/201810/20181010000733388_1.jpg", caption="기온에 따라 달라지는 계절별 옷차림 예시")
 
 # 추천 정보를 반환하는 함수
 def get_recommendations(temp: float, weather: str):
@@ -112,16 +114,15 @@ def get_weather(lat, lon):
     return temp, weather
 
 # 실행
-# 실행
 if address:
     lat, lon = get_coordinates(address)
     if lat is None:
         st.error("❌ 주소를 찾을 수 없습니다. 도로명 주소를 다시 확인해주세요.")
     else:
         temp, weather = get_weather(lat, lon)
-        st.success(f"""📍 위치: **{address}**  
+        st.success(f"📍 위치: **{address}**  
 🌡 현재 기온: **{temp:.1f}°C**  
-🌥 날씨 상태: **{weather}**""")
+🌥 날씨 상태: **{weather}**")
 
         recommendation = get_recommendations(temp, weather)
 
@@ -133,10 +134,3 @@ if address:
 
         st.markdown("### 💡 건강 조언")
         st.markdown(recommendation["건강"])
-
-        # ✅ 마지막에 이미지 출력
-        st.image(
-            "https://wimg.kyeongin.com/news/legacy/file/201810/20181010000733388_1.jpg",
-            caption="기온에 따라 달라지는 계절별 옷차림 예시",
-            use_column_width=True
-        )
