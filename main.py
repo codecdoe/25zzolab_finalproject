@@ -120,7 +120,7 @@ if address:
         st.error("❌ 주소를 찾을 수 없습니다. 도로명 주소를 다시 확인해주세요.")
     else:
         temp, weather = get_weather(lat, lon)
-        st.success(f"📍 위치: **{address}**  
+        st.success(f"📍 위치: **{address}**)  
 🌡 현재 기온: **{temp:.1f}°C**  
 🌥 날씨 상태: **{weather}**")
 
